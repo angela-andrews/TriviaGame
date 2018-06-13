@@ -1,0 +1,48 @@
+body {
+    background: url(/assets/images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat center fixed;
+    height: 900px;
+    font-family: 'Cabin', sans-serif;
+    
+}
+h2{ font-size: 1.7em
+
+}
+
+p{
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 1.4em;
+}
+
+#page{
+    height: 50%;
+    text-align: center;
+ 
+}
+
+button{
+    background-color: black;
+    color: gray;
+    border-radius: 10px;
+    padding: 10px 18px;
+    
+
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.photoattrib{
+    position: absolute; 
+    bottom: 10px;
+    right: 20px;
+}
+
+
+
+
