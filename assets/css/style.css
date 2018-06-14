@@ -4,6 +4,8 @@ body {
     background-repeat: no-repeat center fixed;
     height: 900px;
     font-family: 'Cabin', sans-serif;
+    font-size: 1.3em;
+    
     
 }
 h2{ font-size: 1.7em
@@ -16,7 +18,7 @@ p{
 }
 
 #page{
-    height: 50%;
+    height: 100%;
     text-align: center;
  
 }
@@ -35,6 +37,24 @@ footer {
     bottom: 0;
     width: 100%;
     
+}
+
+#timeRemaining {
+    display: none;
+    margin: 1.5em 0;
+}
+
+#questions{
+    margin-top: 20px;
+}
+
+.questionSpacing{
+    margin-bottom: 15px;
+}
+input[type=radio]{
+    height: 24px;
+    width: 24px;
+    margin: 0 10px 0 10px;
 }
 
 .photoattrib{
