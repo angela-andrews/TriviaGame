@@ -4,67 +4,52 @@ var correct=0;
 var incorrect=0;
 var unanswered=0;
 var pctCorrect=0;
+var quizAns=" ";
+var valueAns= " ";
 var quiz =[
-    {   question : "How many nephew does Popeye have?",
-        guesses: {
-            a: 2,
-            b: 3,
-            c: 4
-            },
-        correctAnswer: 'c'
+    {   question : "How many nephews does Popeye have?",
+        guesses: [2, 3, 4],
+        correctAnswer: 2,
+        data: "popeye"
     },
     {   question : "What phrase was Dexter stuck repeating over and over?",
-        guesses: {
-            a: "I concure",
-            b: "DeeDee, please",
-            c: "Omlet du Fromage"
-            },
-        correctAnswer: 'c'
+        guesses: ["I concure","DeeDee, please","Omlet du Fromage"],
+        correctAnswer: 2,
+        data: "dexter"
     },
     {   question : "Who was Tommie Pickles little brother?",
-        guesses: {
-            a: "Dill",
-            b: "Chuckie",
-            c: "Peter"
-            },
-        correctAnswer: 'a'
+        guesses: ["Dill","Chuckie","Peter"],
+        correctAnswer: 0,
+        data: "tommie"
     },
-    {   question : "What phrase was Dexter stuck repeating over and over?",
-        guesses: {
-            a: "I concure",
-            b: "DeeDee, please",
-            c: "Omlet du Fromage"
-            },
-        correctAnswer: 'c'
+    {   question : "On Casper The Friendly Ghost, what was the little witches name?",
+        guesses: ["Amber", "Wendy", "Glenda"],
+        correctAnswer: 1,
+        data: "casper"
     },
     {
         question : "Name the Animaniacs?",
-        guesses: {
-            a: "Ed, Ed, DeeDee",
-            b: "Yakko, Wacko, Dot",
-            c: "Sam, Petey, Patty"
-            },
-        correctAnswer: 'b'
+        guesses: ["Ed, Edd, Eddie","Yakko, Wacko, Dot","Linus, Lucy, Patty"],
+        correctAnswer: 1,
+        data: "wb"
         },
     {
-        question : "On Hey Arnold, who was his best friend?",
-        guesses: {
-            a: "Gerald Martin Johanssen",
-            b: "Helga Geraldine Pataki",
-            c: "Roger Maximillian Benson"
-            },
-        correctAnswer: 'a'
+        question : "On Hey Arnold, who was Arnold's best friend?",
+        guesses: ["Gerald Johanssen","Helga Pataki","Roger Benson"],
+        correctAnswer: 0,
+        data: "arnold"
         }
 ];
 
-//start game button on click, hid button, start timer and show buttons
+//start game button on click, hide button, start timer and show buttons
     
   function startScreen() {
     $("#startButton").on("click", function(){
         $("#startButton").hide();
         $("#timeRemaining").show();
+        $("#question").show();
         timer();
-        //startGame();
+        startGame();
     });
    
 } //end of startScreen()
@@ -72,17 +57,46 @@ var quiz =[
 startScreen();
     
     function startGame() {
-    //30 sec timer
-    
+       //if answer button = quiz.correctAnswer
+     $(".answer").on("click",function(){
+        quizAns = ($(this).attr('data-answer'));
+        valueAns = ($(this).attr('value'));
+        
+        for(var i=0; i<quiz.length; i++) {
+            if((quizAns == quiz[i].data) && (valueAns == quiz[i].correctAnswer) ){
+              
+                console.log("correct");
+                console.log("data:" + quizAns + " data-answer: " + quiz[i].data);
+                console.log("correctAnswer:" + valueAns + " value: "+ quiz[i].correctAnswer);
+                correct++;
+             } else {
+                console.log("wrong");
+                
+                incorrect++;
+            }     
+            
+        }
+        
+
+
+     });
+
 
     };
+    function checkAnswers() {
+        console.log("checkAnswers")
+        }
 
+        function gameOver(){
+            console.log("game over")
+        }
     function timer(){
        var counter =10;
         countdown = setInterval(thirtySeconds, 1000);
         function thirtySeconds() {
             if (counter === 0) {
                 checkAnswers()
+                gameOver()
                 clearInterval(countdown);
                 
             }
@@ -91,56 +105,6 @@ startScreen();
             }
             $("#seconds").html(counter);
         }
-        
-    }
-
-   
-            $("#done").on("click",checkAnswers());
-            
-            function checkAnswers() {
-
-            if( $("input[name='nephew']:checked")["0"].value === '4') {
-                correct++
-                console.log(correct);
-                } else {
-                    incorrect++
-                    console.log("wrong");
-                }
-
-            if( $("input[name='dexter']:checked")["0"].value === 'omlet') {
-            correct++
-            console.log(correct);
-           } else {
-               incorrect++
-               console.log("wrong");
-           }
-
-           if( $("input[name='tommie']:checked")["0"].value === 'dill') {
-            correct++
-            console.log(correct);
-           } else {
-               incorrect++
-               console.log("wrong");
-           }
-             
-
-
-            };
-
-   
-//30 sec timer
-
-
-
-//use $(this).attr for button click to register the corret answer
-
-// add correct number to correc++ & go to next questions & reset times
-
-// if not answered in time, incorrect++ & go to next question & reset timer
-
-//create array for questions and answers 
-
-//create logic for 
-
+      }
 
 });

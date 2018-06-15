@@ -29,7 +29,7 @@
                       
                       <div id =instructions>
                           <p>Answer as many quesions as you can about your favorite cartoons.</p>
-                          <div id="startButton" class="button  btn btn-lg"><button>Start Game</button></div>
+                          <div id="startButton" class="button startBtnPos btn btn-lg"><button>Start Game</button></div>
                       </div>
                      
                       <div id="game">  
@@ -41,39 +41,36 @@
                           <div id="question">
                             
                             <p class=questionSpacing>How many nephews does Popeye have?</p>
-                            <label> <input type="radio" name="nephew" value=2>2</label>
-                            <label><input type="radio" name="nephew" value=3>3</label>
-                            <label><input type="radio" name="nephew" value=4>4</label>
+                            <button type="button" data-answer="popeye" value="0" class="btn btn-dark answer">2</button>
+                            <button type="button" data-answer="popeye" value="1" class="btn btn-dark answer">3</button>
+                            <button type="button" data-answer="popeye" value="2" class="btn btn-dark answer">4</button>
 
                             <p class=questionSpacing>What phrase was Dexter stuck repeating over and over?</p>
-                            <label><input type="radio" name="dexter" value=concur>I concure</label>
-                            <label><input type="radio" name="dexter" value=deedee>DeeDee, please</label>
-                            <label><input type="radio" name="dexter" value=omlet>Omlet du Fromage</label>
+                            <button type="button" data-answer="dexter" value="0" class="btn btn-dark answer">I concur</button>
+                            <button type="button" data-answer="dexter" value="1" class="btn btn-dark answer">DeeDee, please!</button>
+                            <button type="button" data-answer="dexter" value="2" class="btn btn-dark answer">Omlet du Fromage</button>
 
                             <p class=questionSpacing>Who was Tommie Pickles little brother?</p>
-                            <label><input type="radio" name="tommie" value=dill>Dill</label>
-                            <label><input type="radio" name="tommie" value=chuckie>Chuckie</label>
-                            <label><input type="radio" name="tommie" value=peter>Peter</label> 
+                            <button type="button" data-answer="tommie" value="0" class="btn btn-dark answer">Dill</button> 
+                            <button type="button" data-answer="tommie" value="1" class="btn btn-dark answer">Chuckie</button>
+                            <button type="button" data-answer="tommie" value="2" class="btn btn-dark answer">Peter</button>
 
-                            <p class=questionSpacing>Name the Animaniacts.</p>
-                            <label><input type="radio" name="dexter" value=ed>Ed, Ed, DeeDee</label>
-                            <label><input type="radio" name="dexter" value=yakko>Yakko, Wacko, Dot</label>
-                            <label><input type="radio" name="dexter" value=sam>Sam, Petey, Patty</label>
+                            <p class=questionSpacing>On Casper The Friendly Ghost, what was the little witches name?</p>
+                            <button type="button" data-answer="casper" value="0" class="btn btn-dark answer">Amber</button>
+                            <button type="button" data-answer="casper" value="1" class="btn btn-dark answer">Wendy</button>
+                            <button type="button" data-answer="casper" value="2" class="btn btn-dark answer">Glenda</button>
 
-                            <p class=questionSpacing>What phrase was Dexter stuck repeating over and over?</p>
-                            <label><input type="radio" name="dexter" value=concur>I concure</label>
-                            <label><input type="radio" name="dexter" value=deedee>DeeDee, please</label>
-                            <label><input type="radio" name="dexter" value=omlet>Omlet du Fromage</label>
+                            <p class=questionSpacing>Name the Animaniacs.</p>
+                            <button type="button" data-answer="wb" value="0" class="btn btn-dark answer">Ed, Edd, Eddie</button>
+                            <button type="button" data-answer="wb" value="1" class="btn btn-dark answer">Yakko, Wacko, Dot</button>
+                            <button type="button" data-answer="wb" value="2" class="btn btn-dark answer">Linus, Lucy, Patty</button>
+                           
+                            <p class=questionSpacing>On Hey Arnold, who was Arnold's best friend?</p>
+                            <button type="button" data-answer="arnold" value="0" class="btn btn-dark answer">Gerald Johanssen</button>
+                            <button type="button" data-answer="anrold" value="1" class="btn btn-dark answer">Helga Pataki</button>
+                            <button type="button" data-answer="arnold" value="2" class="btn btn-dark answer">Roger Benson</button>
 
-                            <p class=questionSpacing>What phrase was Dexter stuck repeating over and over?</p>
-                            <label><input type="radio" name="dexter" value=concur>I concure</label>
-                            <label><input type="radio" name="dexter" value=deedee>DeeDee, please</label>
-                            <label><input type="radio" name="dexter" value=omlet>Omlet du Fromage</label>
-
-                            <p class=questionSpacing>What phrase was Dexter stuck repeating over and over?</p>
-                            <label><input type="radio" name="dexter" value=concur>I concure</label>
-                            <label><input type="radio" name="dexter" value=deedee>DeeDee, please</label>
-                            <label><input type="radio" name="dexter" value=omlet>Omlet du Fromage</label>
+                            <br>
 
                                 <button id="done">check answers</button>
                         </div>
