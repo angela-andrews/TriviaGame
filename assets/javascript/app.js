@@ -60,38 +60,38 @@ startScreen();
     function startGame() {
        //if answer button = quiz.correctAnswer
      $(".answer").on("click",function(){
-        // quizAns = ($(this).attr('data-answer')); //the question attr 
+        quizAns = ($(this).attr('data-answer')); //the question attr 
         valueAns = ($(this).attr('value')); //the index of the answer in array
         theQuestion = ($(this).text()); // button text 
-        //console.log(theQuestion);
+        
 
-       $('[data-answer]').each(function(){
-            quizAns = ($(this).attr('data-answer'));
-            for(var i=0; i<quiz.length; i++) {
-                var x = quiz[i].data
-                    if (x === quizAns)  {
-                        console.log(x + " " + quizAns)
+    //    $('[data-answer]').each(function(){
+    //         quizAns = ($(this).attr('data-answer'));
+    //         for(var i=0; i<quiz.length; i++) {
+    //             var x = quiz[i].data
+    //                 if (x === quizAns)  {
+    //                     console.log(x + " " + quizAns)
                   
                    
-               } 
-            }
-       });
-        // for(var i=0; i<quiz.length; i++) {
+    //            } 
+    //         }
+    //    });
+        for(var i=0; i<quiz.length; i++) {
 
 
-        //     if(valueAns == quiz[i].correctAnswer)  {
-        //       //&& (quizAns == quiz[i].data)
-        //         console.log("correct");
-        //         // console.log("data:" + quizAns + " data-answer: " + quiz[i].data);
-        //         // console.log("correctAnswer:" + valueAns + " value: "+ quiz[i].correctAnswer);
-        //         correct++;
-        //      } else {
-        //         console.log("wrong");
+            if((valueAns == quiz[i].correctAnswer) && (quizAns == quiz[i].data)   ) {
+              
+                console.log("correct");
+                // console.log("data:" + quizAns + " data-answer: " + quiz[i].data);
+                // console.log("correctAnswer:" + valueAns + " value: "+ quiz[i].correctAnswer);
+                correct++;
+             } else {
+                console.log("wrong");
                 
-        //         incorrect++;
-        //      }      
+                incorrect++;
+             }      
                     
-        // }
+        }
         
 
 
@@ -124,3 +124,25 @@ startScreen();
       }
 
 });
+
+
+/*
+Open issues:
+startGame() 
+I started with radio buttons, but couldn't get them working during Thursday with my
+tutor. They wouldn't register as 'checked', even when they were
+even after working on them,  so I moved to buttons, thinking they would be easier.
+
+I can register wrong or right, but will hit every other data-answer attr,
+so I end up with 1 correct and 5 wrong or 6 wrong console.logs
+ > also, the user can hit multiple answer buttons.
+ > tried .each() and a for loop and similar behavior occurs.
+
+I haven't started on how to get the game to stop in 30 seconds. 
+
+No function yet for the end of game tally (too busy with the buttons)
+
+No game reset
+
+
+*/
