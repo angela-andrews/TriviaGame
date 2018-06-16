@@ -6,6 +6,7 @@ var unanswered=0;
 var pctCorrect=0;
 var quizAns=" ";
 var valueAns= " ";
+var theQuestion= " ";
 var quiz =[
     {   question : "How many nephews does Popeye have?",
         guesses: [2, 3, 4],
@@ -59,23 +60,38 @@ startScreen();
     function startGame() {
        //if answer button = quiz.correctAnswer
      $(".answer").on("click",function(){
-        quizAns = ($(this).attr('data-answer'));
-        valueAns = ($(this).attr('value'));
-        
-        for(var i=0; i<quiz.length; i++) {
-            if((quizAns == quiz[i].data) && (valueAns == quiz[i].correctAnswer) ){
-              
-                console.log("correct");
-                console.log("data:" + quizAns + " data-answer: " + quiz[i].data);
-                console.log("correctAnswer:" + valueAns + " value: "+ quiz[i].correctAnswer);
-                correct++;
-             } else {
-                console.log("wrong");
+        // quizAns = ($(this).attr('data-answer')); //the question attr 
+        valueAns = ($(this).attr('value')); //the index of the answer in array
+        theQuestion = ($(this).text()); // button text 
+        //console.log(theQuestion);
+
+       $('[data-answer]').each(function(){
+            quizAns = ($(this).attr('data-answer'));
+            for(var i=0; i<quiz.length; i++) {
+                var x = quiz[i].data
+                    if (x === quizAns)  {
+                        console.log(x + " " + quizAns)
+                  
+                   
+               } 
+            }
+       });
+        // for(var i=0; i<quiz.length; i++) {
+
+
+        //     if(valueAns == quiz[i].correctAnswer)  {
+        //       //&& (quizAns == quiz[i].data)
+        //         console.log("correct");
+        //         // console.log("data:" + quizAns + " data-answer: " + quiz[i].data);
+        //         // console.log("correctAnswer:" + valueAns + " value: "+ quiz[i].correctAnswer);
+        //         correct++;
+        //      } else {
+        //         console.log("wrong");
                 
-                incorrect++;
-            }     
-            
-        }
+        //         incorrect++;
+        //      }      
+                    
+        // }
         
 
 
