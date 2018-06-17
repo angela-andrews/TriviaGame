@@ -85,8 +85,11 @@ console.log(quiz)
 console.log(questionNum)
 console.log(quiz[questionNum].correctAnswer)
         if(valueAns == quiz[questionNum].correctAnswer ){
-
+                answered[] = true
             console.log("it is correct")
+        }else {
+
+
         }
         
 
