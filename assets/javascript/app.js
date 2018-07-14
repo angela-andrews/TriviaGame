@@ -1,22 +1,5 @@
 $(document).ready(function(){
 var answered  = []
-// var incorrectAnswers = [];
-// function checkAnswers() {
-//     answered.forEach((x, index)=> {
-//             if(quiz[index].correctAnswer == x){
-//             answered[index] = true;
-
-//             }else {
-//                 incorrectAnswers.push(index)   
-
-//             }
-// incorrectAnswer
-
-//     })
-
-//     incorrectAnswers
-// }
-
 var correct=0;
 var incorrect=0;
 var unanswered=0;
@@ -85,7 +68,7 @@ console.log(quiz)
 console.log(questionNum)
 console.log(quiz[questionNum].correctAnswer)
         if(valueAns == quiz[questionNum].correctAnswer ){
-                answered[] = true
+                // answered[] = true
             console.log("it is correct")
         }else {
 
@@ -141,6 +124,7 @@ console.log(quiz[questionNum].correctAnswer)
             if (counter === 0) {
                 checkAnswers()
                 gameOver()
+                $("#question").hide();
                 clearInterval(countdown);
                 
             }
