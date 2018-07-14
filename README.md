@@ -1,8 +1,8 @@
 # TriviaGame
 ## Can you guess these questions from your favorite cartoons?
 
-This is a trivia game using JavaScript for the logic and jQuery to manipulate HTML. 
 ---
+This is a trivia game using JavaScript for the logic and jQuery to manipulate HTML. 
 
 ![Screenprint](assets/images/trivia.png)
 
